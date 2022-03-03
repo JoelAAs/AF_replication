@@ -11,7 +11,8 @@ genes =[
 ]
 
 assocs = [
-    "test"
+    "matched",
+    "population"
 ]
 
 include: "Filtering.smk"

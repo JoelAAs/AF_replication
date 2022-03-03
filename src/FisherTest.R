@@ -1,11 +1,3 @@
-# samples as rows
-# variants as columns
-# Drop all singular columns
-# Skip any test with only 1 variants or single individuall carriers (set p == 1)
-# Z1 är imputerad
-# Z2 is not
-# Testa leave-one out för att hitta drivers (sens = True)
-
 library(tidyverse)
 
 #### FUNCtions
