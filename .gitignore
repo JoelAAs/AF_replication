@@ -1,2 +1,6 @@
 data/*
 run_data/*
+run_folder/*
+.idea/*
+.snakemake/*
+.Rhistory/*
