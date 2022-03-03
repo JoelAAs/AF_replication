@@ -91,12 +91,17 @@ phenotype            <- read.csv(phenotype_vector_filename, sep ="\t", stringsAs
 
 genotype_matrix <- genotype_matrix[, c("PK", phenotype$sample.id)]
 genotype_matrix <- row_mean_impute(genotype_matrix)
+sample_vf       <- genotype_matrix[, -1] %>% 
+  {rowSums(.[, phenotype$sample.id])/length(phenotype$sample.id)}
 
-non_sigular_variants <-!rowSums(genotype_matrix[-1, phenotype$sample.id]) %in% c(1, 0)
+non_sigular_variants <- genotype_matrix$PK[!sample_vf %in% c(1, 0)]
 
-variant_ann <- variant_ann %>% filter(PK %in% genotype_matrix[non_sigular_variants, "PK"])
-genotype_matrix <- genotype_matrix %>% filter(PK %in% variant_ann$PK)
+variant_ann <- variant_ann %>% 
+  filter(PK %in% non_sigular_variants)
+genotype_matrix <- genotype_matrix %>% 
+  filter(PK %in% variant_ann$PK)
 geno_mat <- t(genotype_matrix[,-1])
+
 if (!is_empty(geno_mat)){
   colnames(geno_mat) <- genotype_matrix$PK
 }
