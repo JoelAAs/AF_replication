@@ -1,6 +1,6 @@
 # Replication of hits, dominant fisher burden test
 
-Under `data/AF_filter/variant_matrix/annotated_vars/{gene}_var_final.tsv` I have list of variants that (CHROM, POS, ALT, REF, selected INFO etc). Under `data/AF_filter/variant_matrix/gmats/{gene}_gmat.tsv` I have a variant matrix (variant per row, and samples as columns where $$x_{ij} \in [NA, 0 ,1 ,2]$$
+Under `data/AF_filter/variant_matrix/annotated_vars/{gene}_var_final.tsv` I have list of variants that (CHROM, POS, ALT, REF, selected INFO etc). Under `data/AF_filter/variant_matrix/gmats/{gene}_gmat.tsv` I have a variant matrix (variant per row, and samples as columns where $x_{ij} \in [NA, 0 ,1 ,2]$
 
 The total workfolow looks like this:
 ![Rulegraph](/docs/figures/rules.png)
@@ -17,5 +17,5 @@ Under `src/FisherTest.R` I rewrote the test to better match my input format. Hop
 Cheerio, Joel
 
 
-The total workfolow looks like this:
+The total workflow looks like this:
 ![Dag](/docs/figures/dag.png)
