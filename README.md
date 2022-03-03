@@ -1,6 +1,6 @@
 # Replication of hits, dominant fisher burden test
 
-Under `data/AF_filter/variant_matrix/annotated_vars/{gene}_var_final.tsv` I have list of variants that (CHROM, POS, ALT, REF, selected INFO etc). Under `data/AF_filter/variant_matrix/gmats/{gene}_gmat.tsv` I have a variant matrix (variant per row, and samples as columns where $x_{ij} \in [NA, 0 ,1 ,2]$
+Under `data/AF_filter/variant_matrix/annotated_vars/{gene}_var_final.tsv` I have list of variants that (CHROM, POS, ALT, REF, selected INFO etc). Under `data/AF_filter/variant_matrix/gmats/{gene}_gmat.tsv` I have a variant matrix (variant per row, and samples as columns where each value in the matrix is 0-2 or missing.
 
 The total workfolow looks like this:
 ![Rulegraph](/docs/figures/rules.png)
