@@ -61,9 +61,9 @@ format_output <- function(geno_mat, response_vector){
         fisher_res$conf.int[2],
         fisher_res$p.value,
         n_carrires_cases,
-        n_carrires_cases/nrow(geno_mat),
+        n_carrires_cases/sum(response_vector),
         n_carrires_controls,
-        n_carrires_controls/nrow(geno_mat)
+        n_carrires_controls/sum(!as.logical(response_vector))
       )
     
   } else {
