@@ -54,6 +54,7 @@ colnames(ppi) <- c("protein1", "protein2","combined_score")
 ppi <- ppi[complete.cases(ppi),]
 
 
+## KEGG enrichment
 pathEnrichKEGG <- enrichKEGG(
   gene = ids$entrezgene_id,
   organism = "hsa", # Homo sapiens
@@ -62,6 +63,7 @@ pathEnrichKEGG <- enrichKEGG(
 
 pathEnrichKEGG@result %>% filter(qvalue < 0.05)
 
+## DO enrichment
 pathEnrichDO <- enrichDO(
   gene = ids$entrezgene_id,
   ont = "DO",
